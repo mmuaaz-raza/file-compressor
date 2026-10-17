@@ -8,6 +8,7 @@ struct Node{
     Node* parent;
     Node(int value, Node *parent = nullptr, Node *left = nullptr, Node *right = nullptr) : left(left), right(right), parent(parent), value(value) {}
 };
+
 class MinHeap{
     Node* root = nullptr;
     int size = 0;
@@ -133,6 +134,7 @@ int main() {
     heap.insert(7);
     heap.insert(6);
     heap.insert(5);
+    heap.insert(10);
     heap.insert(4);
     heap.insert(3);
     heap.insert(2);
