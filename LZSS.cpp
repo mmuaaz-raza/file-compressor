@@ -23,7 +23,7 @@ void compress(string input, vector<bool> &flags, vector<char> &data)
         {
             int len = 0;
             
-            while (i+len < n && j+len < i && input[i+len] == input[j+len]){
+            while (i+len < n && j+len < n && input[i+len] == input[j+len]){
                 len++;
                 if(len > MAX_LEN) break;
             }
@@ -50,7 +50,7 @@ void compress(string input, vector<bool> &flags, vector<char> &data)
         
     }
 
-   
+   decompress(flags,data);
 }
 
 
@@ -70,9 +70,11 @@ string decompress(vector<bool> &flags,vector<char> &data){
             }
         }
         else{
+            cout << data[i] << "";
             output.push_back(data[i++]);
         }
     }
+
     return output;
 }
 
@@ -239,8 +241,8 @@ void decompressLZSSBin(const string inFile,const string outFile ){
 
 }
 
-// int main() {
-//     compressLZSS("huffman.cpp","data/huffman.bin");
-//     decompressLZSSBin("data/huffman.bin","data/huffman.cpp");
-//     return 0;
-// }
+int main() {
+    compressLZSS("data/input.txt","data/compressed.bin");
+    decompressLZSSBin("data/compressed.bin","data/og.txt");
+    return 0;
+}

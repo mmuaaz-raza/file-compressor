@@ -5,7 +5,7 @@ const int CAP = 5;
 
 struct Node {
     int frequency;
-    char data;
+    unsigned char data;
     Node *left = nullptr;
     Node *right = nullptr;
     Node(int frequency, char data='*') : frequency(frequency), data(data) {}
